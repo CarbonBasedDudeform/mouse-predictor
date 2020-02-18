@@ -1,0 +1,14 @@
+C:\Users\Dom\Documents\Uni Stuff\NEAT\ACW\NEAT ACW\Learning Perceptron\bin\Debug\Learning Perceptron.exe
+C:\Users\Dom\Documents\Uni Stuff\NEAT\ACW\NEAT ACW\Learning Perceptron\bin\Debug\Learning Perceptron.pdb
+C:\Users\Dom\Documents\Uni Stuff\NEAT\ACW\NEAT ACW\Learning Perceptron\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dom\Documents\Uni Stuff\NEAT\ACW\NEAT ACW\Learning Perceptron\obj\x86\Debug\Learning Perceptron.exe
+C:\Users\Dom\Documents\Uni Stuff\NEAT\ACW\NEAT ACW\Learning Perceptron\obj\x86\Debug\Learning Perceptron.pdb
+C:\Users\SWEET SWEET BADDASSS\Desktop\Portfolio\NEAT\NEAT ACW\Learning Perceptron\obj\x86\Debug\Learning Perceptron.exe
+C:\Users\SWEET SWEET BADDASSS\Desktop\Portfolio\NEAT\NEAT ACW\Learning Perceptron\obj\x86\Debug\Learning Perceptron.pdb
+C:\Users\SWEET SWEET BADDASSS\Desktop\Portfolio\NEAT\NEAT ACW\Learning Perceptron\bin\Debug\Learning Perceptron.exe
+C:\Users\SWEET SWEET BADDASSS\Desktop\Portfolio\NEAT\NEAT ACW\Learning Perceptron\bin\Debug\Learning Perceptron.pdb
+D:\back that ass up\Portfolio\NEAT\NEAT ACW\Learning Perceptron\bin\Debug\Learning Perceptron.exe
+D:\back that ass up\Portfolio\NEAT\NEAT ACW\Learning Perceptron\bin\Debug\Learning Perceptron.pdb
+D:\back that ass up\Portfolio\NEAT\NEAT ACW\Learning Perceptron\obj\x86\Debug\Learning Perceptron.csprojAssemblyReference.cache
+D:\back that ass up\Portfolio\NEAT\NEAT ACW\Learning Perceptron\obj\x86\Debug\Learning Perceptron.exe
+D:\back that ass up\Portfolio\NEAT\NEAT ACW\Learning Perceptron\obj\x86\Debug\Learning Perceptron.pdb

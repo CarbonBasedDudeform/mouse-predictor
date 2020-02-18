@@ -1,0 +1,160 @@
+﻿float error_function = 0;
+            float lowest_error = 1000000;
+            do
+            {
+                error_function = 0;
+                for (int i = 0; i < desired.Count; i++)
+                {
+                    double output = perceptron.Fire(desired[i], weight);
+                    double delta = 0.65f - output;
+
+                    if (Math.Abs(delta) > double.Epsilon)
+                    {
+                        //Console.WriteLine(delta);
+                        //for (int j = i; j < desired.Count; j++)
+                       // {
+                            weight += (learning_rate * delta * (desired[i]));
+                            //weights[j] += (float)(learning_rate * delta * desired[j]);
+                       // }
+                    }
+
+                    error_function += (float)Math.Abs(delta);
+                }
+
+                if (0.5 * (error_function * error_function) < lowest_error) lowest_error = (float) 0.5 * (error_function * error_function);
+            
+                Console.WriteLine("Lowest: " + lowest_error + " Current: " + 0.5*(error_function * error_function) + " Weight: " + weight);
+            } while (0.5*(error_function*error_function) > 0.2);
+
+
+
+
+
+
+
+//////////---------------old code-----------/////////
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+
+namespace Learning_Perceptron
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<float> desired = new List<float>();
+            List<float> weights = new List<float>();
+            Random random = new Random(DateTime.Now.Millisecond);
+
+            StreamReader reader = new StreamReader("mouse.txt");
+
+            while (!reader.EndOfStream)
+            {
+                desired.Add(float.Parse(reader.ReadLine()));
+
+                //weights.Add(0.1f);//(float)random.NextDouble());
+            }
+
+            //weights.Add(0.1f);
+            //weights.Add(0.1f);
+            double weight = 0.9;
+
+            Perceptron perceptron = new Perceptron();
+            float learning_rate = 0.00000000001f;
+            //float learning_rate = 0.00000825f;
+            //float learning_rate = 0.0810f;
+            //float learning_rate = 0.0000001f;
+
+            double error_function = 0;
+            double lowest_error = 1000000;
+            do
+            {
+                error_function = 0;
+                int i = 1;
+                foreach (float desiredOutput in desired)
+                {
+                        double output = perceptron.Fire(i, weight);
+                        double error = 0.65f - output;
+
+                        if (Math.Abs(error) > double.Epsilon)
+                        {
+                            weight += learning_rate * error * i;
+                        }
+
+                        error_function += error;
+                        i++;
+                }
+
+                if (0.5 * (error_function * error_function) < lowest_error) lowest_error = 0.5 * (error_function * error_function);
+            
+                Console.WriteLine("Lowest: " + lowest_error + " Current: " + 0.5*(error_function * error_function) + " Weight: " + weight);
+            } while (0.5*(error_function*error_function) > 0.9);
+
+            StreamWriter writer = new StreamWriter("output.txt");
+
+            for (int i = 0; i < desired.Count; ++i)
+            {
+                writer.WriteLine(perceptron.Fire(i+1, weight));
+            }
+
+            writer.Flush();
+            writer.Close();
+
+            Console.WriteLine("Finished Training");
+            List<float> predictionIns = new List<float>();
+            for (int i = 1; i < 10; i++)
+            {
+                predictionIns.Add(i);
+            }
+
+            Console.WriteLine("using inputs: {0} through {1} with desired input of {2} to predict input {3}", predictionIns[0], predictionIns[predictionIns.Count -1], 0.65f, predictionIns.Count + 1);
+            predictionIns.Add(0.65f);
+            Console.WriteLine("predicted: " + perceptron.Fire(predictionIns, weight) + " expected: " + perceptron.Fire(predictionIns.Count + 1, weight));
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+////
+public class Perceptron
+    {
+        public const float BIAS = 0.65f;
+
+        public double Fire(List<float> inputs, List<float> weights)
+        {
+            float sum = 0;
+
+            for (int i = 0; i < inputs.Count; i++)
+            {
+                sum += (inputs[i] * weights[i]);
+            }
+
+            return (Activation(sum));
+        }
+
+        public double Adder(float input, double weight)
+        {
+            return Activation(input * weight);
+        }
+
+        public int fired = 0;
+
+        if ((sum + CONSTANT) > 1)
+ 	            {
+ 	                fired++;
+ 	                return true;
+ 	            }
+ 	
+            return false;
+
+    }
